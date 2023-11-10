@@ -1,11 +1,15 @@
-from config.constants import EPOCH_NUMBER
-from model.net import Net
-from training.trainer import Trainer
-from data_import.cifar10 import train_loader, test_loader
+import pytorch_lightning as L
+
+from data_import.cifar10 import CIFAR10DataModule
+from model.net import LitModel
 
 
 if __name__ == '__main__':
-    net = Net()
-    trainer = Trainer(model=net)
-    trainer.train(train_loader=train_loader, num_epochs=EPOCH_NUMBER)
-    trainer.test(test_loader=test_loader)
+    dm = CIFAR10DataModule()
+    model = LitModel()
+    trainer = L.Trainer(
+        max_epochs=5,
+        accelerator="auto",
+        devices=1,
+    )
+    trainer.fit(model, dm)
