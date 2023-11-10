@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import pytorch_lightning as L
 from torchmetrics.functional import accuracy
 
-from config.constants import LEARNING_RATE
+from src.constants import LEARNING_RATE
 
 
 class LitModel(L.LightningModule):

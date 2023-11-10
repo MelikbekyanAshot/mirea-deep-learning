@@ -3,7 +3,7 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
 from torchvision.datasets import CIFAR10
 
-from config.constants import MEAN_NORM, STD_NORM, BATCH_SIZE
+from src.constants import MEAN_NORM, STD_NORM, BATCH_SIZE
 
 
 class CIFAR10DataModule(L.LightningDataModule):

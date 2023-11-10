@@ -1,7 +1,7 @@
 import pytorch_lightning as L
 
-from data_import.cifar10 import CIFAR10DataModule
-from model.net import LitModel
+from src.cifar10 import CIFAR10DataModule
+from src.net import LitModel
 
 
 if __name__ == '__main__':
